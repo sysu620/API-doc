@@ -710,6 +710,17 @@ margin-bottom: 20px;
     }
   }
 };
+        defs["answers"] = {
+  "type" : "object",
+  "properties" : {
+    "contents" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/answer"
+      }
+    }
+  }
+};
         defs["delivery"] = {
   "type" : "object",
   "properties" : {
@@ -3913,9 +3924,9 @@ public class UserApiExample {
     public static void main(String[] args) {
         
         UserApi apiInstance = new UserApi();
-        Answer body = ; // Answer | the answer should be posted
+        Answers body = ; // Answers | the answer should be posted
         try {
-            answer result = apiInstance.fillQuery(body);
+            answers result = apiInstance.fillQuery(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#fillQuery");
@@ -3932,9 +3943,9 @@ public class UserApiExample {
 
     public static void main(String[] args) {
         UserApi apiInstance = new UserApi();
-        Answer body = ; // Answer | the answer should be posted
+        Answers body = ; // Answers | the answer should be posted
         try {
-            answer result = apiInstance.fillQuery(body);
+            answers result = apiInstance.fillQuery(body);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#fillQuery");
@@ -3948,13 +3959,13 @@ public class UserApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-User-fillQuery-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Answer *body = ; // the answer should be posted
+                              <pre class="prettyprint"><code class="language-cpp">Answers *body = ; // the answer should be posted
 
 UserApi *apiInstance = [[UserApi alloc] init];
 
 // fill out a questionare
 [apiInstance fillQueryWith:body
-              completionHandler: ^(answer output, NSError* error) {
+              completionHandler: ^(answers output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -3970,7 +3981,7 @@ UserApi *apiInstance = [[UserApi alloc] init];
 
 var api = new SwaggerJsClient.UserApi()
 
-var body = ; // {Answer} the answer should be posted
+var body = ; // {Answers} the answer should be posted
 
 
 var callback = function(error, data, response) {
@@ -4002,12 +4013,12 @@ namespace Example
         {
             
             var apiInstance = new UserApi();
-            var body = new Answer(); // Answer | the answer should be posted
+            var body = new Answers(); // Answers | the answer should be posted
 
             try
             {
                 // fill out a questionare
-                answer result = apiInstance.fillQuery(body);
+                answers result = apiInstance.fillQuery(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -4025,7 +4036,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
-$body = ; // Answer | the answer should be posted
+$body = ; // Answers | the answer should be posted
 
 try {
     $result = $api_instance->fillQuery($body);
@@ -4042,7 +4053,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::UserApi;
 
 my $api_instance = WWW::SwaggerClient::UserApi->new();
-my $body = WWW::SwaggerClient::Object::Answer->new(); # Answer | the answer should be posted
+my $body = WWW::SwaggerClient::Object::Answers->new(); # Answers | the answer should be posted
 
 eval { 
     my $result = $api_instance->fillQuery(body => $body);
@@ -4062,7 +4073,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.UserApi()
-body =  # Answer | the answer should be posted
+body =  # Answers | the answer should be posted
 
 try: 
     # fill out a questionare
@@ -4095,7 +4106,7 @@ $(document).ready(function() {
   "description" : "the answer should be posted",
   "required" : true,
   "schema" : {
-    "$ref" : "#/definitions/answer"
+    "$ref" : "#/definitions/answers"
   }
 };
   var schema = schemaWrapper.schema;
@@ -4140,7 +4151,7 @@ $(document).ready(function() {
                                         var schemaWrapper = {
   "description" : "create success",
   "schema" : {
-    "$ref" : "#/definitions/answer"
+    "$ref" : "#/definitions/answers"
   }
 };
                                         var schema = schemaWrapper.schema;
