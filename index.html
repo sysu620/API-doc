@@ -696,6 +696,20 @@ margin-bottom: 20px;
   <script>
     // Script section to load models into a JS Var
     var defs = {}
+        defs["answer"] = {
+  "type" : "object",
+  "properties" : {
+    "questionareId" : {
+      "type" : "integer"
+    },
+    "answerId" : {
+      "type" : "integer"
+    },
+    "answer" : {
+      "type" : "string"
+    }
+  }
+};
         defs["delivery"] = {
   "type" : "object",
   "properties" : {
@@ -750,10 +764,22 @@ margin-bottom: 20px;
         defs["questionare"] = {
   "type" : "object",
   "properties" : {
-    "queryid" : {
+    "questionareId" : {
       "type" : "integer"
     },
-    "content" : {
+    "num" : {
+      "type" : "integer"
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "type" : {
+      "type" : "string"
+    },
+    "isNeed" : {
+      "type" : "boolean"
+    },
+    "options" : {
       "type" : "string"
     }
   }
@@ -763,8 +789,11 @@ margin-bottom: 20px;
     "task" : {
       "$ref" : "#/definitions/task"
     },
-    "questionare" : {
-      "$ref" : "#/definitions/questionare"
+    "questionares" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/questionare"
+      }
     }
   }
 };
@@ -785,6 +814,9 @@ margin-bottom: 20px;
     },
     "userId" : {
       "type" : "integer"
+    },
+    "state" : {
+      "type" : "string"
     }
   }
 };
@@ -837,6 +869,9 @@ margin-bottom: 20px;
     },
     "userId" : {
       "type" : "integer"
+    },
+    "state" : {
+      "type" : "string"
     }
   }
 };
@@ -881,6 +916,9 @@ margin-bottom: 20px;
                   <li class="nav-header" data-group="User"><a href="#api-User">API Methods - User</a></li>
                     <li data-group="User" data-name="acceptTask" class="">
                       <a href="#api-User-acceptTask">acceptTask</a>
+                    </li>
+                    <li data-group="User" data-name="fillQuery" class="">
+                      <a href="#api-User-fillQuery">fillQuery</a>
                     </li>
                     <li data-group="User" data-name="finishAccept" class="">
                       <a href="#api-User-finishAccept">finishAccept</a>
@@ -3827,6 +3865,358 @@ $(document).ready(function() {
                         </article>
                       </div>
                       <hr>
+                    <div id="api-User-fillQuery">
+                      <article id="api-User-fillQuery-0" data-group="User" data-name="fillQuery" data-version="0">
+                        <div class="pull-left">
+                          <h1>fillQuery</h1>
+                          <p>fill out a questionare</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">fill out a questionare and post the answer(将用户填写的答案传输到后台)</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/fillQuestionare</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-User-fillQuery-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-User-fillQuery-0-java">Java</a></li>
+                          <li class=""><a href="#examples-User-fillQuery-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-User-fillQuery-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-User-fillQuery-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-User-fillQuery-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-User-fillQuery-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-User-fillQuery-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-User-fillQuery-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-User-fillQuery-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-User-fillQuery-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-User-fillQuery-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/fillQuestionare"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-User-fillQuery-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.UserApi;
+
+import java.io.File;
+import java.util.*;
+
+public class UserApiExample {
+
+    public static void main(String[] args) {
+        
+        UserApi apiInstance = new UserApi();
+        Answer body = ; // Answer | the answer should be posted
+        try {
+            answer result = apiInstance.fillQuery(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#fillQuery");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-User-fillQuery-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.UserApi;
+
+public class UserApiExample {
+
+    public static void main(String[] args) {
+        UserApi apiInstance = new UserApi();
+        Answer body = ; // Answer | the answer should be posted
+        try {
+            answer result = apiInstance.fillQuery(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling UserApi#fillQuery");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-User-fillQuery-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-User-fillQuery-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Answer *body = ; // the answer should be posted
+
+UserApi *apiInstance = [[UserApi alloc] init];
+
+// fill out a questionare
+[apiInstance fillQueryWith:body
+              completionHandler: ^(answer output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-User-fillQuery-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SwaggerJsClient = require('swagger-js-client');
+
+var api = new SwaggerJsClient.UserApi()
+
+var body = ; // {Answer} the answer should be posted
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.fillQuery(body, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-User-fillQuery-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-User-fillQuery-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class fillQueryExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new UserApi();
+            var body = new Answer(); // Answer | the answer should be posted
+
+            try
+            {
+                // fill out a questionare
+                answer result = apiInstance.fillQuery(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UserApi.fillQuery: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-User-fillQuery-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\UserApi();
+$body = ; // Answer | the answer should be posted
+
+try {
+    $result = $api_instance->fillQuery($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->fillQuery: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-User-fillQuery-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::UserApi;
+
+my $api_instance = WWW::SwaggerClient::UserApi->new();
+my $body = WWW::SwaggerClient::Object::Answer->new(); # Answer | the answer should be posted
+
+eval { 
+    my $result = $api_instance->fillQuery(body => $body);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling UserApi->fillQuery: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-User-fillQuery-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.UserApi()
+body =  # Answer | the answer should be posted
+
+try: 
+    # fill out a questionare
+    api_response = api_instance.fill_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserApi->fillQuery: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">body <span style="color:red;">*</span></td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "body",
+  "description" : "the answer should be posted",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/answer"
+  }
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_fillQuery_body');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_fillQuery_body"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 201 - create success </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-fillQuery-201-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-fillQuery-201-schema">
+                                  <div id='responses-fillQuery-201-schema-201' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "create success",
+  "schema" : {
+    "$ref" : "#/definitions/answer"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-fillQuery-201-schema-data').val(stringify(schema));
+                                        var result = $('#responses-fillQuery-201-schema-201');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-fillQuery-201-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - bad request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-fillQuery-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-fillQuery-400-schema">
+                                  <div id='responses-fillQuery-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "bad request",
+  "schema" : {
+    "type" : "object",
+    "properties" : {
+      "error" : {
+        "type" : "string"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-fillQuery-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-fillQuery-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-fillQuery-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
                     <div id="api-User-finishAccept">
                       <article id="api-User-finishAccept-0" data-group="User" data-name="finishAccept" data-version="0">
                         <div class="pull-left">
@@ -3839,7 +4229,7 @@ $(document).ready(function() {
                         <p class="marked">finish a accepted task by userId and TaskId(通过用户id和任务id完成一个已接收的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/user/finishAccept</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/user/finishAccept</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -3859,7 +4249,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-finishAccept-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "https://petstore.swagger.io/user/finishAccept"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://petstore.swagger.io/user/finishAccept"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-finishAccept-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -4147,7 +4537,7 @@ $(document).ready(function() {
                         <p class="marked">finish a published task(结束/取消一个已发布的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/user/finishPublish</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/user/finishPublish</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -4167,7 +4557,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-finishPublish-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "https://petstore.swagger.io/user/finishPublish"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://petstore.swagger.io/user/finishPublish"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-finishPublish-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
