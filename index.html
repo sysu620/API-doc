@@ -903,6 +903,9 @@ margin-bottom: 20px;
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Task"><a href="#api-Task">API Methods - Task</a></li>
+                    <li data-group="Task" data-name="getAnswer" class="">
+                      <a href="#api-Task-getAnswer">getAnswer</a>
+                    </li>
                     <li data-group="Task" data-name="getDelivery" class="">
                       <a href="#api-Task-getDelivery">getDelivery</a>
                     </li>
@@ -976,6 +979,346 @@ margin-bottom: 20px;
         <div id="sections">
                 <section id="api-Task">
                   <h1>Task</h1>
+                    <div id="api-Task-getAnswer">
+                      <article id="api-Task-getAnswer-0" data-group="User" data-name="getAnswer" data-version="0">
+                        <div class="pull-left">
+                          <h1>getAnswer</h1>
+                          <p>get answers</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">get all answers of questionareId by questionareId(通过任务id获取一个快递任务)</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/answer/{questionareId}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Task-getAnswer-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Task-getAnswer-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Task-getAnswer-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Task-getAnswer-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Task-getAnswer-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Task-getAnswer-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Task-getAnswer-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Task-getAnswer-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Task-getAnswer-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Task-getAnswer-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Task-getAnswer-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Task-getAnswer-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/answer/{questionareId}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Task-getAnswer-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.TaskApi;
+
+import java.io.File;
+import java.util.*;
+
+public class TaskApiExample {
+
+    public static void main(String[] args) {
+        
+        TaskApi apiInstance = new TaskApi();
+        Integer questionareId = 56; // Integer | the id of questionare
+        try {
+            answers result = apiInstance.getAnswer(questionareId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TaskApi#getAnswer");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Task-getAnswer-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.TaskApi;
+
+public class TaskApiExample {
+
+    public static void main(String[] args) {
+        TaskApi apiInstance = new TaskApi();
+        Integer questionareId = 56; // Integer | the id of questionare
+        try {
+            answers result = apiInstance.getAnswer(questionareId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TaskApi#getAnswer");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Task-getAnswer-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Task-getAnswer-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Integer *questionareId = 56; // the id of questionare
+
+TaskApi *apiInstance = [[TaskApi alloc] init];
+
+// get answers
+[apiInstance getAnswerWith:questionareId
+              completionHandler: ^(answers output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Task-getAnswer-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SwaggerJsClient = require('swagger-js-client');
+
+var api = new SwaggerJsClient.TaskApi()
+
+var questionareId = 56; // {Integer} the id of questionare
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getAnswer(questionareId, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Task-getAnswer-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Task-getAnswer-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getAnswerExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TaskApi();
+            var questionareId = 56;  // Integer | the id of questionare
+
+            try
+            {
+                // get answers
+                answers result = apiInstance.getAnswer(questionareId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TaskApi.getAnswer: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Task-getAnswer-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\TaskApi();
+$questionareId = 56; // Integer | the id of questionare
+
+try {
+    $result = $api_instance->getAnswer($questionareId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TaskApi->getAnswer: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Task-getAnswer-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::TaskApi;
+
+my $api_instance = WWW::SwaggerClient::TaskApi->new();
+my $questionareId = 56; # Integer | the id of questionare
+
+eval { 
+    my $result = $api_instance->getAnswer(questionareId => $questionareId);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TaskApi->getAnswer: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Task-getAnswer-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.TaskApi()
+questionareId = 56 # Integer | the id of questionare
+
+try: 
+    # get answers
+    api_response = api_instance.get_answer(questionareId)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskApi->getAnswer: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">questionareId*</td>
+<td>
+
+
+    <div id="d2e199_getAnswer_questionareId">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description">
+                        the id of questionare
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - success </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getAnswer-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getAnswer-200-schema">
+                                  <div id='responses-getAnswer-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "success",
+  "schema" : {
+    "$ref" : "#/definitions/answers"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getAnswer-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getAnswer-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getAnswer-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 404 - not found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getAnswer-404-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getAnswer-404-schema">
+                                  <div id='responses-getAnswer-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "not found",
+  "schema" : {
+    "type" : "object",
+    "properties" : {
+      "error" : {
+        "type" : "string"
+      }
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getAnswer-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getAnswer-404-schema-404');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getAnswer-404-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
                     <div id="api-Task-getDelivery">
                       <article id="api-Task-getDelivery-0" data-group="User" data-name="getDelivery" data-version="0">
                         <div class="pull-left">
@@ -1668,7 +2011,7 @@ except ApiException as e:
                         <p class="marked">query a page of tasks accepted(获取一页用户接受的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/qAcceptPage</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/accept</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -1688,7 +2031,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Task-qAcceptPage-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/qAcceptPage?page=&userId="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/accept?page=&userId="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Task-qAcceptPage-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2041,7 +2384,7 @@ except ApiException as e:
                         <p class="marked">query a page of tasks published(获取一页用户发布的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/qPublishPage</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/publish</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -2061,7 +2404,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Task-qPublishPage-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/qPublishPage?page=&userId="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/publish?page=&userId="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Task-qPublishPage-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2414,7 +2757,7 @@ except ApiException as e:
                         <p class="marked">query a page of delivery tasks not accepted and not published by user(获取一页用户没接受过，也不是由用户发布的快递任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/queryPageD</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/deliverys</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -2434,7 +2777,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Task-queryPageD-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/queryPageD?page=&userId="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/deliverys?page=&userId="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Task-queryPageD-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2787,7 +3130,7 @@ except ApiException as e:
                         <p class="marked">query a page of questionareTasks not accepted and not published by user(获取一页用户没接受过，也不是由用户发布的问卷任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/queryPageQ</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/questionares</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -2807,7 +3150,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Task-queryPageQ-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/queryPageQ?page=&userId="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/questionares?page=&userId="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Task-queryPageQ-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3160,7 +3503,7 @@ except ApiException as e:
                         <p class="marked">query some tasks not accepted and not published by user by title(通过标题查询获取用户没接受过，也不是由用户发布的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/queryTitle</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/task/title</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -3180,7 +3523,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Task-queryTitle-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/queryTitle?title=&userId="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://petstore.swagger.io/task/title?title=&userId="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Task-queryTitle-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3536,7 +3879,7 @@ except ApiException as e:
                         <p class="marked">accept a new task(接受一个新任务，需要绑定用户和任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/accept</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/task</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -3556,7 +3899,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-acceptTask-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/accept"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/task"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-acceptTask-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -3888,7 +4231,7 @@ $(document).ready(function() {
                         <p class="marked">fill out a questionare and post the answer(将用户填写的答案传输到后台)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/fillQuestionare</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/answer</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -3908,7 +4251,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-fillQuery-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/fillQuestionare"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/answer"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-fillQuery-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -4240,7 +4583,7 @@ $(document).ready(function() {
                         <p class="marked">finish a accepted task by userId and TaskId(通过用户id和任务id完成一个已接收的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/user/finishAccept</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/user/accept</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -4260,7 +4603,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-finishAccept-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://petstore.swagger.io/user/finishAccept"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://petstore.swagger.io/user/accept"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-finishAccept-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -4548,7 +4891,7 @@ $(document).ready(function() {
                         <p class="marked">finish a published task(结束/取消一个已发布的任务)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/user/finishPublish</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/user/publish</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -4568,7 +4911,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-finishPublish-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://petstore.swagger.io/user/finishPublish"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "https://petstore.swagger.io/user/publish"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-finishPublish-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -5197,7 +5540,7 @@ except ApiException as e:
                         <p class="marked">publish a new deliveryTask(发布一个新的快递任务，需要填写表单)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/publishDelivery</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/delivery</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -5217,7 +5560,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-publishDTask-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/publishDelivery"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/delivery"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-publishDTask-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -5549,7 +5892,7 @@ $(document).ready(function() {
                         <p class="marked">publish a new questionareTask(发布一个新的问卷任务，需要填写表单)</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/publishQuery</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/questionare</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -5569,7 +5912,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-User-publishQTask-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/publishQuery"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://petstore.swagger.io/user/questionare"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-User-publishQTask-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
