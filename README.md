@@ -214,7 +214,7 @@
 	    "userId":		integer //任务发起人id，为当前登录用户
 	    "state":		string  //任务状态，分为"进行中"和"已完成"，由服务端更新
 	},
-	questionares:[{
+	questionare:[{
 		"questionareId": integer //问卷id，同任务id，由服务端生成，置0即可
 		"num": 			 integer //题目序号，由服务端生成，客户端将问题按顺序存放即可
 		"title":		 string  //题目内容，必填
@@ -238,7 +238,7 @@
 	    "userId":		0,
 	    "state":		""
 	},
-	questionares:[{
+	questionare:[{
 		"questionareId": 0,
 		"num": 			 0,
 		"title":		 "题目1",
@@ -264,7 +264,7 @@
 	    "userId":		10001,
 	    "state":		"进行中"
 	},
-	questionares:[{
+	questionare:[{
 		"questionareId": 10000,
 		"num": 			 1,
 		"title":		 "题目1",
@@ -466,7 +466,7 @@
 	    "userId":		10001,
 	    "state":		"进行中",
 	},
-	questionares:[{
+	questionare:[{
 		"questionareId": 10000,
 		"num": 			 1,
 		"title":		 "题目1",
