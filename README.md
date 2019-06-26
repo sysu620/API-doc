@@ -561,7 +561,7 @@
 ```
 
 ## 获取一页用户没接受过，也不是由用户发布的快递任务
-> `GET /task/delivery?page=&userId=`
+> `GET /task/deliverys?page=&userId=`
 
 **Query Parameters**
 ```
@@ -596,7 +596,7 @@
 ```
 
 ## 获取一页用户没接受过，也不是由用户发布的问卷任务
-> `GET /task/questionare?page=&userId=`
+> `GET /task/questionares?page=&userId=`
 
 **Query Parameters**
 ```
